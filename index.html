@@ -1,0 +1,120 @@
+<!-- 🟣 Инструкция: как создать index.html и admin.html перед загрузкой на GitHub -->
+<!-- 1️⃣ Создай папку на компьютере — например, kato-journal. -->
+<!-- 2️⃣ Открой проводник, нажми Правой кнопкой → Создать → Текстовый документ. -->
+<!-- 3️⃣ Назови файл index.html (если предупреждает про расширение — соглись). -->
+<!-- 4️⃣ Открой его в Блокноте или VS Code. -->
+<!-- 5️⃣ Скопируй сюда HTML-код сайта (вот этот) и сохрани (Ctrl+S). -->
+<!-- 6️⃣ Аналогично создай второй файл admin.html, вставь туда код админки. -->
+<!-- 7️⃣ Убедись, что оба файла лежат в папке kato-journal. -->
+<!-- 8️⃣ Потом открой GitHub → свой репозиторий → Add file → Upload files → перетащи файлы → Commit changes. -->
+<!-- 9️⃣ В Settings → Pages выбери ветку main и / (root) → Save. -->
+<!-- 🔟 Подожди минуту — сайт появится по адресу https://твоеимя.github.io/kato-journal/. -->
+<!-- ℹ️ Если видишь сообщение «Содержимое заблокировано» — это не ошибка кода!  
+Браузер просто блокирует внешние ресурсы (шрифты, изображения и т.д.) при открытии локального HTML-файла напрямую с диска.  
+
+Чтобы всё заработало:
+1️⃣ Запусти сайт через локальный сервер (например, Live Server в VSCode или командой `python -m http.server`).  
+2️⃣ Или выложи сайт на GitHub Pages или Netlify.  
+3️⃣ После этого все шрифты и изображения будут подгружаться корректно.  -->
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ЭНДЖИ КАТО — Психологический журнал будущего</title>
+  <meta name="description" content="Журнал Энджи Като — новая эра психологии отношений. Путь к пониманию себя, статьи, тесты." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {margin:0;font-family:'Orbitron', sans-serif;background:#0a0a10;color:#e8e7ff;overflow-x:hidden;scroll-behavior:smooth;}
+    header {position:sticky;top:0;background:rgba(15,15,30,0.8);backdrop-filter:blur(10px);display:flex;justify-content:space-between;align-items:center;padding:20px 40px;z-index:100;}
+    header .logo {display:flex;align-items:center;gap:6px;cursor:pointer;text-decoration:none;}
+    header .logo span.kato {font-weight:900;font-size:2rem;color:#8B5CF6;letter-spacing:3px;text-shadow:0 0 25px rgba(139,92,246,0.7);}
+    header .logo span.ng {font-family:'Dancing Script', cursive;font-size:1.6rem;color:#e0dfff;transform:rotate(-8deg) translateY(-10px);opacity:0.9;}
+    nav a {color:#e8e7ff;margin-left:25px;text-decoration:none;transition:0.3s;}
+    nav a:hover {color:#8B5CF6;}
+    .hero {position:relative;text-align:center;padding:120px 20px;min-height:92vh;overflow:hidden;}
+    .hero .stage{position:absolute;inset:0;perspective:1200px;pointer-events:none;z-index:-1}
+    .hero .depth{position:absolute;inset:0;transform-style:preserve-3d}
+    .rect{position:absolute;width:260px;height:160px;border-radius:20px;background-size:cover;background-position:center;border:1px solid rgba(139,92,246,.4);box-shadow:0 0 40px rgba(139,92,246,.35),0 10px 30px rgba(0,0,0,.45);backdrop-filter:blur(6px) saturate(140%);transform-style:preserve-3d;will-change:transform;opacity:0.9;}
+    .rect::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(300px 180px at 30% 30%,rgba(255,255,255,.18),transparent 60%);mix-blend-mode:screen;}
+    .hero h2 {font-size:3rem;letter-spacing:4px;color:#8B5CF6;text-shadow:0 0 40px rgba(139,92,246,0.7);position:relative;z-index:1}
+    .hero p {max-width:720px;margin:20px auto;color:#a7a5c7;font-size:1.15rem;line-height:1.6;position:relative;z-index:1}
+    .btn {display:inline-block;padding:14px 26px;margin-top:35px;background:linear-gradient(90deg,#8B5CF6,#4C1D95);border:none;border-radius:12px;color:#fff;cursor:pointer;font-weight:700;letter-spacing:1px;transition:transform .3s;position:relative;z-index:1;text-decoration:none;}
+    .btn:hover {transform:scale(1.05);}
+    section {padding:80px 20px;max-width:1200px;margin:auto;}
+    .title {font-size:2.2rem;margin-bottom:24px;text-align:center;color:#8B5CF6;letter-spacing:1.2px;}
+    footer {text-align:center;padding:50px 20px;color:#999;border-top:1px solid rgba(255,255,255,.1);margin-top:80px;}
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#home" class="logo" title="На главную">
+      <span class="kato">KATO</span>
+      <span class="ng">NG</span>
+    </a>
+    <nav>
+      <a href="#about">О журнале</a>
+      <a href="#posts">Публикации</a>
+      <a href="admin.html">Админка</a>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="stage" aria-hidden="true">
+      <div class="depth" id="depth-layer"></div>
+    </div>
+    <h2>Психология из будущего</h2>
+    <p>Журнал Энджи Като — пространство новой психологии, где технологии соединяются с человеческой глубиной. Исследуй эмоции, границы и смыслы через современную оптику.</p>
+    <a href="#posts" class="btn">Читать статьи</a>
+  </section>
+
+  <section id="about">
+    <h3 class="title">О журнале</h3>
+    <p style="text-align:center;max-width:820px;margin:auto;color:#a7a5c7">Энджи Като — синтез науки, искусства и интуиции. Здесь появляются тексты о близости, выгорании, границах, о новых способах понимать себя и других. Мы не просто журнал — лаборатория психологии будущего.</p>
+  </section>
+
+  <section id="posts">
+    <h3 class="title">Публикации</h3>
+    <p style="text-align:center;max-width:820px;margin:auto;color:#a7a5c7">Скоро здесь появятся статьи о современных отношениях, выгорании и новых психологических инструментах.</p>
+  </section>
+
+  <footer>
+    <p>© <span id="year"></span> Энджи Като — журнал о психологии отношений будущего.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const depth=document.getElementById('depth-layer');
+    const IMAGES=[
+      'https://images.unsplash.com/photo-1612831814213-18bb3cb389e6?auto=format&fit=crop&w=400&q=60',
+      'https://images.unsplash.com/photo-1520523839897-bd0b52f230f9?auto=format&fit=crop&w=400&q=60',
+      'https://images.unsplash.com/photo-1522206024047-9c9254216753?auto=format&fit=crop&w=400&q=60',
+      'https://images.unsplash.com/photo-1543966888-0c163c07b019?auto=format&fit=crop&w=400&q=60',
+      'https://images.unsplash.com/photo-1612831455543-0b3d75fb9050?auto=format&fit=crop&w=400&q=60'
+    ];
+    const RECT_COUNT=12;const rects=[];
+    for(let i=0;i<RECT_COUNT;i++){
+      const r=document.createElement('div');
+      r.className='rect';
+      const img=IMAGES[Math.floor(Math.random()*IMAGES.length)];
+      r.style.backgroundImage=`url(${img})`;
+      r.style.opacity=0.2+Math.random()*0.3;
+      const x=Math.random()*100;const y=Math.random()*90;const z=(Math.random()*800-400);
+      r.style.left=`calc(${x}vw - 130px)`;r.style.top=`calc(${y}vh - 80px)`;
+      r.style.transform=`translateZ(${z}px) rotateX(${Math.random()*15-7}deg) rotateY(${Math.random()*30-15}deg)`;
+      depth.appendChild(r);rects.push({el:r,z});
+    }
+    window.addEventListener('mousemove',(e)=>{
+      const{innerWidth:w,innerHeight:h}=window;
+      const rx=((e.clientY-h/2)/(h/2))*6;
+      const ry=-((e.clientX-w/2)/(w/2))*8;
+      rects.forEach(({el,z})=>{
+        el.style.transform=`translateZ(${z}px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+      });
+    });
+  </script>
+</body>
+</html>

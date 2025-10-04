@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Админка — ЭНДЖИ КАТО</title>
+  <meta name="description" content="Панель управления журналом Энджи Като" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {margin:0;font-family:'Orbitron', sans-serif;background:#0a0a10;color:#e8e7ff;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;overflow:hidden;}
+    h1 {font-size:2.4rem;color:#8B5CF6;letter-spacing:3px;text-shadow:0 0 25px rgba(139,92,246,0.7);}
+    p {color:#a7a5c7;margin-top:10px;margin-bottom:30px;}
+    .panel {background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:40px;text-align:center;box-shadow:0 0 40px rgba(139,92,246,0.25),0 10px 30px rgba(0,0,0,0.45);max-width:700px;width:90%;}
+    input, textarea {width:90%;padding:12px;margin:10px 0;border-radius:8px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.05);color:#fff;font-family:inherit;}
+    button {padding:12px 26px;border-radius:8px;background:linear-gradient(90deg,#8B5CF6,#4C1D95);border:none;color:#fff;font-weight:800;cursor:pointer;transition:0.3s;margin-top:10px;}
+    button:hover {transform:scale(1.05);}
+    a {color:#8B5CF6;text-decoration:none;margin-top:20px;display:inline-block;}
+    footer {margin-top:40px;color:#888;font-size:0.9rem;}
+  </style>
+</head>
+<body>
+  <div class="panel">
+    <h1>Панель администратора</h1>
+    <p>Добавить новую статью в журнал</p>
+    <input type="text" id="title" placeholder="Заголовок статьи"/>
+    <textarea id="content" rows="6" placeholder="Текст статьи..."></textarea>
+    <button onclick="alert('Статья добавлена (демо-режим)')">Опубликовать</button>
+    <a href="index.html">← Вернуться на сайт</a>
+  </div>
+
+  <footer>
+    <p>© <span id="year"></span> Энджи Като — Панель управления</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
