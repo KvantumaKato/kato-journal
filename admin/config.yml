@@ -1,24 +1,23 @@
 backend:
   name: git-gateway
   branch: main
+  commit_messages:
+    create: "Создана статья «{{slug}}»"
+    update: "Обновлена статья «{{slug}}»"
+    delete: "Удалена статья «{{slug}}»"
+    uploadMedia: "Загружен файл «{{path}}»"
+    deleteMedia: "Удален файл «{{path}}»"
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
-publish_mode: editorial_workflow
-
-site_url: "https://magical-bombolone-457a0b.netlify.app"
-display_url: "https://magical-bombolone-457a0b.netlify.app"
-
 collections:
-  - name: "articles"
-    label: "Журнал"
+  - name: "posts"
+    label: "Статьи"
     folder: "posts"
     create: true
-    slug: "{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Заголовок", name: "title", widget: "string" }
       - { label: "Дата", name: "date", widget: "datetime" }
-      - { label: "Категория", name: "category", widget: "select", options: ["Психология", "Литература", "Эссе", "Культура", "Интервью"] }
-      - { label: "Обложка", name: "thumbnail", widget: "image" }
       - { label: "Текст", name: "body", widget: "markdown" }
