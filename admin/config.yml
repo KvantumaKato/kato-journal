@@ -1,23 +1,24 @@
 backend:
   name: git-gateway
   branch: main
-  commit_messages:
-    create: "Создана статья «{{slug}}»"
-    update: "Обновлена статья «{{slug}}»"
-    delete: "Удалена статья «{{slug}}»"
-    uploadMedia: "Загружен файл «{{path}}»"
-    deleteMedia: "Удален файл «{{path}}»"
+  repo: KvantumaKato/kato-journal
 
-media_folder: "images/uploads"
+publish_mode: editorial_workflow
+
+media_folder: "images/uploads"        # сюда будут сохраняться загруженные файлы
 public_folder: "/images/uploads"
+
+site_url: "https://magical-bombolone-457a0b.netlify.app"
 
 collections:
   - name: "posts"
-    label: "Статьи"
+    label: "Публикации"
     folder: "posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Заголовок", name: "title", widget: "string" }
       - { label: "Дата", name: "date", widget: "datetime" }
-      - { label: "Текст", name: "body", widget: "markdown" }
+      - { label: "Тело статьи", name: "body", widget: "markdown" }
+
+local_backend: true
